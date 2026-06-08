@@ -1,5 +1,6 @@
 from langchain_ollama import  ChatOllama
 from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 
 
 model = ChatOllama(
@@ -19,12 +20,12 @@ template2 = PromptTemplate(
     input_variables=['text']
 )
 
-prompt1 = template1.invoke({"topic": 'balck hole'})
 
-result = model.invoke(prompt1)
+parser = StrOutputParser()
 
-prompt2 = template2.invoke({"text": result.content})
 
-result1 = model.invoke(prompt2)
+chain = template1 | model | parser | template2 | model | parser
 
-print(result1.content)
+result = chain.invoke({"topic": 'balck hole'})
+
+print(result)
