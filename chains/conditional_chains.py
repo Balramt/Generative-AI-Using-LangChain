@@ -16,7 +16,7 @@ parser = StrOutputParser()
 
 class Feedback(BaseModel):
 
-    sentiment: Literal['positive', 'negative'] = Field(description='Give the sentiment of the feedback')
+    sentiment: Literal['positive', 'negative'] = Field(description='Give the sentiment of the feedback only postive or negative now extra words')
 
 parser2 = PydanticOutputParser(pydantic_object=Feedback)
 
