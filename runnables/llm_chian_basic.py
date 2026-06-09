@@ -19,7 +19,7 @@ prompt= PromptTemplate(
 
 # Create an LLm chain
 
-chain = LLMChain(llm = model, prompt = prompt)
+chain = LLMChain(llm = model, prompt = prompt) # here we created the chain by combining the prompts and and llm
 
 #run the chain with a specific topic'
 
