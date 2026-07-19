@@ -13,3 +13,4 @@ class Student(BaseModel):
 new_student = {'name': 'Balram'}
 student = Student(** new_student)
 print(student)
+print(student.name)
