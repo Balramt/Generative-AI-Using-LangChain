@@ -17,7 +17,7 @@ class Review(BaseModel):
     sentiment: Literal["pos", "neg"] = Field(description="Return sentiment of the review either negative, positive or neutral")
     pros: Optional[list[str]] = Field(default=None, description="Write down all the pros inside a list")
     cons: Optional[list[str]] = Field(default=None, description="Write down all the cons inside a list")
-    name: Optional[str] = Field(default=None, description="Write the name of the reviewer")
+    name: Optional[str] = Field(default=None, description="Write the name of the reviewers")
     
 
 structured_model = model.with_structured_output(Review)
@@ -34,7 +34,7 @@ Stunning 200MP camera with incredible zoom capabilities
 Long battery life with fast charging
 S-Pen support is unique and useful
                                  
-Review by Balram Tiwari
+Reviewed by Balram Tiwari
 """)
 
 print(result)

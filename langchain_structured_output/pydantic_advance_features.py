@@ -18,6 +18,7 @@ print(student.name)
 
 
 student_dict = dict(student)
+print(student_dict)
 print(student_dict['age'])
 
 
